@@ -1,0 +1,30 @@
+<h3>Написать сообщение</h3>
+<form id="contact_form" action="" method="post">
+	<input type="text" class="form-control" name="name" placeholder="ФИО" value=""/><br/>
+	<input type="email" class="form-control" name="email" placeholder="Email" value="" /><br/>
+	<input type="tel" class="form-control" name="phone" placeholder="Телефон" value="" /><br/>
+	<textarea name="message" class="form-control" placeholder="Ваше сообщение" value=""></textarea><br/>
+	<button class="btn btn-lg btn-primary btn-block" data-target="#exampleModalCenter" type="submit">Отправить</button>
+</form>
+
+<script type="text/javascript" src="/js/admin.js"></script>
+
+<script>
+	$("#contact_form").submit(function(event) {
+		event.preventDefault();
+		if ( !$("input[name='name']").val().length || 
+			!$("input[name='email']").val().length || 
+			!$("input[name='phone']").val().length || 
+			!$("textarea[name='message']").val().length ) {
+
+			$('#contact_form').html('Ошибка! Все поля должны быть заполнены!');
+		} else {
+			$.post("/contacts/", $("#contact_form").serialize())
+			.done(function(data) {
+				$('#contact_form').replaceWith(data);
+			});
+		}
+
+		
+	});
+</script>

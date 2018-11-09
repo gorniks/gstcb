@@ -1,0 +1,23 @@
+body{
+	padding-top: 50px;
+}
+.starter-template{
+	padding: 40px 15px;
+}
+form{
+	width: 400px;
+	max-width: 400px;
+}
+.alert{
+	width: 400px;
+	max-width: 400px;
+}
+.form-group.img label,
+.filename{
+	width: 100%;
+}
+
+.article-img{
+	max-width: 300px;
+	float: left;
+}

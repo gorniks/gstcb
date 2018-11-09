@@ -1,0 +1,32 @@
+<h3>Новая запись</h3>
+<form method="post" action="" enctype="multipart/form-data">
+     <div class="form-group">
+        <label for="title">Название</label>
+        <input  onkeyup="$('#alias').val(urlRusLat($(this).val()));"  type="text" id="title" name="title" value="" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="alias">Алиас</label>
+        <input type="text" id="alias" name="alias" value="" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="category">Категория</label>
+        <select name="category" id="category">
+            <?php foreach($data['categories'] as $cat){ ?>
+                <option value="<?=$cat['id']?>"><?=$cat['title']?></option>
+            <?php } ?>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="content">Содержимое</label>
+        <textarea name="content" id="content" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="inputimg">Изображение</label>
+        <input type="file" id="inputimg" name="inputimg" accept="image/jpeg,image/png,image/gif,image/jpg" />
+    </div>
+    <div class="form-group">
+        <label for="is_published">Опубликовано?</label>
+        <input type="checkbox" name="is_published" id="is_published" checked="checked" />
+    </div>
+    <input type="submit" class="btn btn-success" value="Отправить" />
+</form>

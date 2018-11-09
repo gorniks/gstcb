@@ -1,0 +1,12 @@
+<?php foreach($data['pages'] as $page_data) { ?>
+    <div style="margin-top: 20px;">
+        <a href="/pages/view/<?=$page_data['alias']?>"><?=$page_data['title']?></a>
+    </div>
+<?php } ?>
+
+<div class="pagination">
+<?php if (!is_null($data['pagination']) && $data['pagination'] > 1) {
+	for ($i=0; $i < $data['pagination']; $i++) { ?>
+		<a href="/pages/page/<?=$i+1?>" class="btn btn-outline-primary"><?=$i+1?></a>
+<?php }} ?>
+</div>

@@ -1,0 +1,21 @@
+<h3>Входящие сообщения</h3><br/>
+<table class="table table-striped" style="width: 100%;">
+    <tr>
+        <td style="width: 5%;">#</td>
+        <td style="width: 10%;">ФИО</td>
+        <td style="width: 25%;">Email</td>
+        <td style="width: 25%;">Телефон</td>
+        <td style="width: 50%;">Сообщение</td>
+        <td></td>
+    </tr>
+    <?php foreach($data as $item) { ?>
+    <tr>
+        <td><?=$item['id']?></td>
+        <td><?=$item['name']?></td>
+        <td><?=$item['email']?></td>
+        <td><?=$item['phone']?></td>
+        <td><?=$item['message']?></td>
+        <td><a href="/admin/contacts/delete/<?=$item['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning">Удалить</button></a></td>
+    </tr>
+    <?php } ?>
+</table>

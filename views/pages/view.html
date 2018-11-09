@@ -1,0 +1,7 @@
+<h1><?=$data['page']['title']?></h1>
+<?php //если нет имаги, то грузим плейсхолдер
+	$img = $data['page']['image'] ? '/img/'.$data['page']['image'] : 'https://via.placeholder.com/300x150'; 
+	echo '<pre>'; print_r($img); echo '</pre>';
+?>
+<img src="<?=$img?>" alt="<?=$data['page']['title']?>" class="article-img">
+<?=$data['page']['content']?>
